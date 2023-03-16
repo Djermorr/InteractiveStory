@@ -7,11 +7,27 @@
 
     <link href="styles/reset.css" type="text/css" rel="stylesheet">
     <link href="styles/styles.css" type="text/css" rel="stylesheet">
-    <script defer src="scripts/script.js"></script>
+    <script defer src="src/script.js"></script>
+    	<style>
+		label {
+			display: block;
+			margin-bottom: 10px;
+		}
+	</style>
   </head>
   <body>
 
-    <!-- Hier komt je content -->
+	<h1>Choose Your Option</h1>
+	<form>
+    <label>
+      <input type="radio" name="option" value="option1"> Left
+    </label>
+    <label>
+      <input type="radio" name="option" value="option2"> Right
+    </label>    
+		<button type="submit">Save</button>
+	</form>
+
 
   </body>
 </html>
