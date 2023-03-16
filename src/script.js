@@ -1,4 +1,4 @@
-const form = document.querySelector('form');
+const form = document.querySelector('#option-form');
 const radioButtons = form.querySelectorAll('input[type=radio]');
 const selectedOption = localStorage.getItem('selectedOption');
 
@@ -18,7 +18,6 @@ form.addEventListener('submit', function(event) {
   const selectedButton = form.querySelector('input[type=radio]:checked');
   localStorage.setItem('selectedOption', selectedButton.value);
   
-  // Redirect the user to the appropriate page
-  const nextPage = selectedButton.value + '.html';
-  window.location.href = nextPage;
+  // Redirect to the selected page
+  window.location.href = `${selectedButton.value}`;
 });
