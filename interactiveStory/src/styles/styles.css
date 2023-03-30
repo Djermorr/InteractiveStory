@@ -6,7 +6,10 @@ body {
 	background-image: url("../../public/img/imgPage1.png");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position-x: 0;
+    background-position-y: -500px;
 }
+
 
 form {
 	max-width: 400px;
@@ -20,31 +23,20 @@ h1 {
 	text-align: center;
 	margin-bottom: 20px;
 }
-
-label {
-    display: block;
-    margin-bottom: 10px;
+main{
+    text-align: center;
+    align-items: center;
 }
-
-.option1 {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    cursor: pointer;
-}
-
-.option2 {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    cursor: pointer;
-}
-
-button {
-	display: block;
-	margin-top: 20px;
+#reset-button {
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.content{
+    width: 100%;
+    align-items: center;
 }

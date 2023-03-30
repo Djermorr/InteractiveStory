@@ -9,14 +9,14 @@
     <script defer src="src/script.js"></script>
 
   </head>
-  <body>
+  <body onload=wsConnect() onunload=wsDisconnect()>
     <main>
       <h1>Choose Your Option</h1>
       <p id="content">Je hoort uit de gang iets fluisteren naar jouw: “psst hej! Jij daar! Zie je deze cadeautjes? één van deze is voor u! Kies je het linkse cadeautje of het rechtse?</p>
-      <div id="option-buttons">
-        <button type="button" value="option1">Left</button>
-        <button type="button" value="option2">Right</button>
-      </div>
+      <!-- <div id="option-buttons">
+        <button class="buttonLeft" type="button" value="option1">Left</button>
+        <button class="buttonRight" type="button" value="option2">Right</button>
+      </div> -->
       <button id="reset-button" type="button">Reset</button>
   </main>
   </body>
