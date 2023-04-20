@@ -7,6 +7,9 @@ let background = document.querySelector('body')
 
 var currentTime = Date.now();
 var time = currentTime;
+const message = new SpeechSynthesisUtterance();
+const voices = window.speechSynthesis.getVoices();
+console.log(voices);
 
 /*
 Banaan = B
@@ -14,6 +17,15 @@ Taart = T
 Eten = E
 
  */
+
+
+message.text = 'Je hoort uit de gang iets fluisteren naar jouw: “psst hej! Jij daar! Zie je deze cadeautjes? één van deze is voor u! Kies je het linkse cadeautje of het rechtse?';
+window.addEventListener('load', () => {
+    setTimeout(() => {
+  speechSynthesis.speak(message);
+}, 1000); // 1 second delay
+});
+
 let currentOption = 'option1';
 const options = {
   option1: {
