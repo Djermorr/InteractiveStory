@@ -18,24 +18,11 @@ Eten = E
  */
 
 
-// Get an array of available voices
-var voices = window.speechSynthesis.getVoices();
-
-// Set the voice to the desired one
-message.voice = voices.filter(function(voice) {
-  return voice.name === "Google UK English Female";
-})[0];
-
-// create an Audio object
-var audio = new Audio();
-
-// set the source of the audio file
-
-audio.src = './public/img/gameshow.mp3';
-
-// play the audio file
-audio.play();
-
+var gameshow = new Audio();
+var sound = new Audio();
+gameshow.src = './public/sound/gameshow.mp3';
+sound.src = '';
+gameshow.play();
 
   window.addEventListener('load', () => {
     setTimeout(function() {
@@ -46,6 +33,12 @@ audio.play();
     
   
   });
+  var voices = window.speechSynthesis.getVoices();
+message.pitch = 1.1;
+message.volume = 1;
+message.lang = "nl-NL";
+message.rate = 1.1;
+
   
 let currentOption = 'option1';
 const options = {
@@ -56,22 +49,26 @@ const options = {
  
   },
   option2: {
-    question: 'Hoera, (gejuich) je hebt een (tromgeroffel) banaan gewonnen! Spijtig dat je de andere kamer niet gekozen hebt, daar viel een vele betere prijs te winnen, weet je, ik vind je wel leuk, ik ga je toch de kans geven om deze prijs te winnen, het achter de linkse deur! Maar, er is een grote kans dat er achter deze deur helemaal niets is, en dan ben je ook je banaan kwijt! Ga rechts als je je banaan wilt bijhouden en het niet wilt riskeren om deze te verliezen!',
+    question: 'Hoera, je hebt een banaan gewonnen! In de andere kamer viel een vele betere prijs te winnen, ik ga je nog een kans geven om iets coolers te winnen, kies een kant en win een prijs!',
     bg: './public/img/imgPage2.png',
     nextLeft: 'option4',
-    nextRight: 'option5',
+    nextRight: 'option4',
+    sound: './public/sound/klap.mp3'
+
   },
   option3: {
-    question: 'PROFICIAT, u heeft een overheerlijk TAARTJE gewonnen! Wil je het op eten?"\nJA:LINKS\nNEE: RECHTS',
+    question: 'PROFICIAT, u heeft een overheerlijk TAARTJE gewonnen!  In de andere kamer viel een vele betere prijs te winnen, wil je het op eten?"\nJA:LINKS\nNEE: RECHTS',
     bg: './public/img/imgPage2.png',
     nextLeft: 'option6',
     nextRight: 'option7',
+    sound: './public/sound/klap.mp3'
   },
   option4: {
-    question: 'Kies links of recht (4)',
+    question: 'Jammer maar helaas, geen prijs voor jouw! Je bent zelfs je banaan kwijt. Maar weet je, ik ga je nog eens de kans geven om te winnen! YOU CAN DO IT! achter één van deze twee deuren ligt de grote prijs, got get it champ!',
     bg: './public/img/imgPage2.png',
     nextLeft: 'option8',
     nextRight: 'option9',
+    sound: './public/sound/fail.mp3'
   },
   option5: {
     question: 'Kies links of recht (5)',
@@ -80,13 +77,41 @@ const options = {
     nextRight: 'optionStop',
   },
   option6: {
-    question: 'Kies links of recht (4)',
+    question: '“Hmm wat een lekker taartje seg”, denk je. Maar je begint je onwel te voelen, heb je dan nooit niet geleerd om eten van een vreemde op te eten? Je valt in slaap...',
     bg: './public/img/imgPage2.png',
     nextLeft: 'option12',
     nextRight: 'option13',
   },
   option7: {
-    question: 'Kies links of recht (5)',
+    question: 'Wat? Waarom wil je het taartje niet eten? ik heb er zelfs nog zo veel tijd in gestoken! podium begint te schudden, gebouw begint in te storten.  en lichten beginnen te flikkeren. Waarom eet nooit iemand van mijn taartjes! Waarom! Nog eens een luide knal en het wordt plots zwart voor je ogen',
+    bg: './public/img/imgPage2.png',
+    nextLeft: 'option14',
+    nextRight: 'option15',
+  },
+
+  option8: {
+    question: 'Wat? Waarom wil je het taartje niet eten? ik heb er zelfs nog zo veel tijd in gestoken! podium begint te schudden, gebouw begint in te storten.  en lichten beginnen te flikkeren. Waarom eet nooit iemand van mijn taartjes! Waarom! Nog eens een luide knal en het wordt plots zwart voor je ogen',
+    bg: './public/img/imgPage2.png',
+    nextLeft: 'option14',
+    nextRight: 'option15',
+  },
+
+  option9: {
+    question: 'Wat? Waarom wil je het taartje niet eten? ik heb er zelfs nog zo veel tijd in gestoken! podium begint te schudden, gebouw begint in te storten.  en lichten beginnen te flikkeren. Waarom eet nooit iemand van mijn taartjes! Waarom! Nog eens een luide knal en het wordt plots zwart voor je ogen',
+    bg: './public/img/imgPage2.png',
+    nextLeft: 'option14',
+    nextRight: 'option15',
+  },
+
+  option10: {
+    question: 'Wat? Waarom wil je het taartje niet eten? ik heb er zelfs nog zo veel tijd in gestoken! podium begint te schudden, gebouw begint in te storten.  en lichten beginnen te flikkeren. Waarom eet nooit iemand van mijn taartjes! Waarom! Nog eens een luide knal en het wordt plots zwart voor je ogen',
+    bg: './public/img/imgPage2.png',
+    nextLeft: 'option14',
+    nextRight: 'option15',
+  },
+
+  option11: {
+    question: 'Wat? Waarom wil je het taartje niet eten? ik heb er zelfs nog zo veel tijd in gestoken! podium begint te schudden, gebouw begint in te storten.  en lichten beginnen te flikkeren. Waarom eet nooit iemand van mijn taartjes! Waarom! Nog eens een luide knal en het wordt plots zwart voor je ogen',
     bg: './public/img/imgPage2.png',
     nextLeft: 'option14',
     nextRight: 'option15',
@@ -164,18 +189,38 @@ function wsConnect() {
           currentOption = options[currentOption].nextLeft;
           background.style.backgroundImage = `url(${options[currentOption].bg})`;
           content.textContent = options[currentOption].question;
-          const message = new SpeechSynthesisUtterance();
-          message.text = options[currentOption].question;
-          speechSynthesis.speak(message);
+          setTimeout(() => {
+            message.text = options[currentOption].question;
+            speechSynthesis.speak(message);
+          }, 5000);
+          message.pitch = 1.1;
+          message.volume = 1;
+          message.lang = "nl-NL";
+          message.rate = 1.1;
+          var sound = new Audio();
+          sound.src = options[currentOption].sound;
+          sound.play();
+      
+
          
 
         } else if(msg.data === 'right'){
           currentOption = options[currentOption].nextRight;
           background.style.backgroundImage = `url(${options[currentOption].bg})`;
           content.textContent = options[currentOption].question;
-          const message = new SpeechSynthesisUtterance();
           message.text = options[currentOption].question;
-          speechSynthesis.speak(message);
+          setTimeout(() => {
+            message.text = options[currentOption].question;
+            speechSynthesis.speak(message);
+          }, 5200);
+          message.pitch = 1.1;
+          message.volume = 1;
+          message.lang = "nl-NL";
+          message.rate = 1.1;
+          var sound = new Audio();
+          sound.src = options[currentOption].sound;
+          sound.play();
+      
         } else if(currentTime > time + 300000) {
 
         }
