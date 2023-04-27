@@ -8,8 +8,7 @@ let background = document.querySelector('body')
 var currentTime = Date.now();
 var time = currentTime;
 const message = new SpeechSynthesisUtterance();
-const voices = window.speechSynthesis.getVoices();
-console.log(voices);
+
 
 /*
 Banaan = B
@@ -19,59 +18,82 @@ Eten = E
  */
 
 
-message.text = 'Je hoort uit de gang iets fluisteren naar jouw: “psst hej! Jij daar! Zie je deze cadeautjes? één van deze is voor u! Kies je het linkse cadeautje of het rechtse?';
-window.addEventListener('load', () => {
-    setTimeout(() => {
-  speechSynthesis.speak(message);
-}, 1000); // 1 second delay
-});
+// Get an array of available voices
+var voices = window.speechSynthesis.getVoices();
 
+// Set the voice to the desired one
+message.voice = voices.filter(function(voice) {
+  return voice.name === "Google UK English Female";
+})[0];
+
+// create an Audio object
+var audio = new Audio();
+
+// set the source of the audio file
+
+audio.src = './public/img/gameshow.mp3';
+
+// play the audio file
+audio.play();
+
+
+  window.addEventListener('load', () => {
+    setTimeout(function() {
+    message.text = 'Beste mensen, welkom op onze gameshow! Zie je deze cadeautjes beste speler? één van deze is voor u! Kies je het linkse cadeautje of het rechtse?';
+    speechSynthesis.speak(message);
+}, 5000); // delay in milliseconds (2000 milliseconds = 2 seconds)
+  
+    
+  
+  });
+  
 let currentOption = 'option1';
 const options = {
   option1: {
-    question: 'Kies links of recht (1)',
+    question: '',
     nextLeft: 'option2',
     nextRight: 'option3',
+ 
   },
   option2: {
-    question: 'Kies links of recht (2)',
-    bg: './../public/img/imgPage2.png',
+    question: 'Hoera, (gejuich) je hebt een (tromgeroffel) banaan gewonnen! Spijtig dat je de andere kamer niet gekozen hebt, daar viel een vele betere prijs te winnen, weet je, ik vind je wel leuk, ik ga je toch de kans geven om deze prijs te winnen, het achter de linkse deur! Maar, er is een grote kans dat er achter deze deur helemaal niets is, en dan ben je ook je banaan kwijt! Ga rechts als je je banaan wilt bijhouden en het niet wilt riskeren om deze te verliezen!',
+    bg: './public/img/imgPage2.png',
     nextLeft: 'option4',
     nextRight: 'option5',
   },
   option3: {
-    question: 'Kies links of recht (3)',
-    bg: './../public/img/imgPage2.png',
+    question: 'PROFICIAT, u heeft een overheerlijk TAARTJE gewonnen! Wil je het op eten?"\nJA:LINKS\nNEE: RECHTS',
+    bg: './public/img/imgPage2.png',
     nextLeft: 'option6',
     nextRight: 'option7',
   },
   option4: {
     question: 'Kies links of recht (4)',
-    bg: './../public/img/imgPage2.png',
+    bg: './public/img/imgPage2.png',
     nextLeft: 'option8',
     nextRight: 'option9',
   },
   option5: {
     question: 'Kies links of recht (5)',
-    bg: './../public/img/imgPage4.png',
+    bg: './public/img/imgPage4.png',
     nextLeft: 'optionStop',
     nextRight: 'optionStop',
   },
   option6: {
     question: 'Kies links of recht (4)',
-    bg: './../public/img/imgPage2.png',
+    bg: './public/img/imgPage2.png',
     nextLeft: 'option12',
     nextRight: 'option13',
   },
   option7: {
     question: 'Kies links of recht (5)',
-    bg: './../public/img/imgPage2.png',
+    bg: './public/img/imgPage2.png',
     nextLeft: 'option14',
     nextRight: 'option15',
   },
   optionStop:{
     question: 'Kies links of recht (stop)',
-    bg: './../public/img/imgPage3.png',
+    bg: './public/img/imgPage3.png',
   }
 };
 
@@ -113,7 +135,7 @@ resetButton.addEventListener('click', () => {
   optionButtons.forEach(button => button.classList.remove('selected'));
 
   // Clear the content
-  content.textContent = "Je hoort uit de gang iets fluisteren naar jouw: “psst hej! Jij daar! Zie je deze cadeautjes? één van deze is voor u! Kies je het linkse cadeautje of het rechtse?";
+  content.textContent = 'Beste mensen, welkom op onze gameshow! Zie je deze cadeautjes beste speler? één van deze is voor u! Kies je het linkse cadeautje of het rechtse?';
 });
 
 // This needs to point to the web socket in the Node-RED flow
@@ -142,10 +164,18 @@ function wsConnect() {
           currentOption = options[currentOption].nextLeft;
           background.style.backgroundImage = `url(${options[currentOption].bg})`;
           content.textContent = options[currentOption].question;
+          const message = new SpeechSynthesisUtterance();
+          message.text = options[currentOption].question;
+          speechSynthesis.speak(message);
+         
+
         } else if(msg.data === 'right'){
           currentOption = options[currentOption].nextRight;
           background.style.backgroundImage = `url(${options[currentOption].bg})`;
           content.textContent = options[currentOption].question;
+          const message = new SpeechSynthesisUtterance();
+          message.text = options[currentOption].question;
+          speechSynthesis.speak(message);
         } else if(currentTime > time + 300000) {
 
         }
