@@ -49,8 +49,8 @@ const options = {
  
   },
   option2: {
-    question: 'Hoera, je hebt een banaan gewonnen! In de andere kamer viel een vele betere prijs te winnen, ik ga je nog een kans geven om iets coolers te winnen, kies een kant en win een prijs!',
-    bg: './public/img/imgPage2.png',
+    question: 'Hoera, je hebt een banaan gewonnen! In de andere kamer viel een vele betere prijs te winnen, ik ga je nog een kans geven om iets coolers te winnen, kies de juiste deur en win een betere prijs!',
+    bg: './public/img/Gameshow/Gameshow.png',
     nextLeft: 'option4',
     nextRight: 'option4',
     sound: './public/sound/klap.mp3'
@@ -64,8 +64,8 @@ const options = {
     sound: './public/sound/klap.mp3'
   },
   option4: {
-    question: 'Jammer maar helaas, geen prijs voor jouw! Je bent zelfs je banaan kwijt. Maar weet je, ik ga je nog eens de kans geven om te winnen! YOU CAN DO IT! achter één van deze twee deuren ligt de grote prijs, got get it champ!',
-    bg: './public/img/imgPage2.png',
+    question: 'Jammer maar helaas, geen prijs voor jouw! Je bent zelfs je banaan kwijt. Ik ga je toch nog een kans geven om te winnen! Kies een deur en win een prijs!',
+    bg: './public/img/Gameshow/Gameshow.png',
     nextLeft: 'option8',
     nextRight: 'option9',
     sound: './public/sound/fail.mp3'
@@ -90,17 +90,19 @@ const options = {
   },
 
   option8: {
-    question: 'Wat? Waarom wil je het taartje niet eten? ik heb er zelfs nog zo veel tijd in gestoken! podium begint te schudden, gebouw begint in te storten.  en lichten beginnen te flikkeren. Waarom eet nooit iemand van mijn taartjes! Waarom! Nog eens een luide knal en het wordt plots zwart voor je ogen',
-    bg: './public/img/imgPage2.png',
+    question: 'LINKS is spijtig genoeg niet de juiste weg, Weeral niet, probeer nog een keer, ik heb hier weer twee pakjes klaargezet, KIES VERSTANDIG en WIN JE GROTE PRIJS!',
+    bg: './public/img/Gameshow/glitchingGameshow.png',
     nextLeft: 'option14',
-    nextRight: 'option15',
+    nextRight: 'option14',
+    sound: './public/sound/buzzer.mp3'
   },
 
   option9: {
-    question: 'Wat? Waarom wil je het taartje niet eten? ik heb er zelfs nog zo veel tijd in gestoken! podium begint te schudden, gebouw begint in te storten.  en lichten beginnen te flikkeren. Waarom eet nooit iemand van mijn taartjes! Waarom! Nog eens een luide knal en het wordt plots zwart voor je ogen',
-    bg: './public/img/imgPage2.png',
+    question: 'Oeeeh, je blijft maar verliezen seg, RECHTS is spijtig genoeg niet de juist weg, ik heb hier weer twee pakjes klaargezet, KIES VERSTANDIG en WIN EEN GROTE PRIJS!',
+    bg: './public/img/Gameshow/glitchingGameshow.png',
     nextLeft: 'option14',
-    nextRight: 'option15',
+    nextRight: 'option14',
+    sound: './public/sound/buzzer.mp3'
   },
 
   option10: {
@@ -108,6 +110,36 @@ const options = {
     bg: './public/img/imgPage2.png',
     nextLeft: 'option14',
     nextRight: 'option15',
+  },
+
+  option14:{
+    question: 'Ik weet niet hoe ik dit moet zeggen maar. Je bent weeral verkeerd... Probeer misschien nog eens?',
+    bg: './public/img/Gameshow/glitchingGameshow.png',
+    nextLeft: 'option15',
+    nextRight: 'option15',
+    sound: './public/sound/bwabwa.mp3'
+  },
+  option15:{
+    question: 'Wat is er aan het gebeuren, er wordt hier maar geen prijs gewonnen, PROBEER NOG EENS',
+    bg: './public/img/Gameshow/glitchingGameshow.png',
+    nextLeft: 'option16',
+    nextRight: 'option16',
+    sound: './public/sound/bwabwa.mp3'
+  },
+  option16:{
+    question: 'WAT, WEERAL NIET GEWONNEN, er was misschien nooit geen prijs, ik geef het alvast op, jij kunt doen wat je wil, kies een deur of niet, het interesseert mij niet meer, doei!',
+    bg: './public/img/Gameshow/glitchingGameshow.png',
+    nextLeft: 'option17',
+    nextRight: 'option17',
+    sound: './public/sound/bwabwa.mp3'
+  },
+
+  option17:{
+    question: '',
+    bg: './public/img/Gameshow/overgrownGameshow.png',
+    nextLeft: 'option17',
+    nextRight: 'option17',
+    sound: './public/sound/crickets.mp3'
   },
 
   option11: {
