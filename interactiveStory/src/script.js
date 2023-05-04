@@ -57,7 +57,7 @@ const options = {
 
   },
   option3: {
-    question: 'PROFICIAT, u heeft een overheerlijk TAARTJE gewonnen! In de andere kamer viel wel een vele betere prijs te winnen, wil je het op eten? "JA:LINKS NEE: RECHTS',
+    question: 'PROFICIAT, u heeft een overheerlijk TAARTJE gewonnen! In de andere kamer viel wel een vele betere prijs te winnen, wil je het overheerlijke taartje op eten? "JA:LINKS NEE: RECHTS',
     bg: './public/img/Gameshow/Gameshow.png',
     nextLeft: 'option6',
     nextRight: 'option7',
@@ -84,12 +84,54 @@ const options = {
     sound: './public/sound/snacking.mp3'
   },
   option7: {
-    question: 'Wat? Waarom wil je het taartje niet eten? ik heb er zelfs nog zo veel tijd in gestoken! podium begint te schudden, gebouw begint in te storten.  en lichten beginnen te flikkeren. Waarom eet nooit iemand van mijn taartjes! Waarom! Nog eens een luide knal en het wordt plots zwart voor je ogen',
-    bg: './public/img/imgPage2.png',
-    nextLeft: 'option14',
-    nextRight: 'option15',
+    question: 'Wat? Waarom wil je het taartje niet eten? ik heb er zelfs nog zo veel tijd in gestoken! Waarom eet nooit iemand van mijn taartjes! Je hoort nog eens een luide knal en het wordt plots zwart voor je ogen. Kies een deur om door te gaan',
+    bg: './public/img/Gameshow/overgrownGameshow.png',
+    nextLeft: 'option23',
+    nextRight: 'option23',
+    sound: './public/sound/rumbling.mp3'
+  },
+  option23: {
+    question: 'Je ontwaakt in een gesloopte zaal, het podium is volledig kapot gemaakt. Rondom u liggen mensen onder het puin. Niemand weet wat er gebeurt is. Je ziet uit je linker ooghoek nog de presentator zijn kleedkamer betreden. Voor je staan twee deuren, je kunt kiezen om de set te verlaten, en naar buiten te gaan (links) OF  de presentator te confronteren (rechts)',
+    bg: './public/img/Gameshow/overgrownGameshow.png',
+    nextLeft: 'option24',
+    nextRight: 'option25',
+    sound: './public/sound/debris.mp3'
+  },
+  option24: {
+    question: 'Je staat recht en beweegt naar de uitgang, onderweg valt er nog een hoop puin naast je naar beneden op iemand naast je zijn been. Help! krijst de man uit, ik krijg de steen niet van mijn benen. Het gebouw begint steeds minder stevig te worden en je beseft dat er geen tijd is voor deze man te helpen. Help je hem? JA = LINKS NEE = RECHTS',
+    bg: './public/img/Gameshow/overgrownGameshow.png',
+    nextLeft: 'option26',
+    nextRight: 'option27',
+    sound: './public/sound/rumbling.mp3'
+  },
+  option25: {
+    question: 'Achter deze deur staat de presentator, Je kan nog altijd door de linkse deur te pakken gaan lopen of ga je echt de confrontatie aan? LINKS: Lopen RECHTS: confronteren',
+    bg: './public/img/Gameshow/overgrownGameshow.png',
+    nextLeft: 'option27',
+    nextRight: 'option28',
+    sound: './public/sound/rumbling.mp3'
   },
 
+  option26: {
+    question: 'Je heft de grote blok steen van de man zijn benen en helpt hem recht. Het been van de man ziet er helemaal niet goed uit. Je probeert hem op te pakken en vertrekt naar de uitgang. Onderweg naar de uitgang duw je hem nog uit de weg voor een andere blok, maar je bezwijkt zelf onder het puin en je blaast je laatste adem uit',
+    bg: './public/img/Gameshow/overgrownGameshow.png',
+    nextLeft: 'option22',
+    nextRight: 'option23',
+    
+  },
+  option27: {
+    question: 'Je verlaat het gebouw, als je naar buiten gaat kijk je nog eens snel over je schouder naar achter, je kan alleen maar denken dat dit allemaal u schuld is, had je maar dat taartje gegeten... Je ziet de man ook nog onder het puin zijn laatste adem uitblazen terwijl hij in u ogen kijkt.',
+    bg: './public/img/Gameshow/overgrownGameshow.png',
+    nextLeft: 'option22',
+    nextRight: 'option23',
+  },
+  option28: {
+    question: 'Achter de deur staat de presentor die niet twijfelt om je neer te steken, hij schuimbekt en heeft nog etensrestjes van het taartje rond zijn mond hangen, had dit ook gebeurt had jij het taartje gegeten. Je blaast je laatste adem uit.',
+    bg: './public/img/Gameshow/overgrownGameshow.png',
+    nextLeft: 'option22',
+    nextRight: 'option23',
+    
+  },
   option8: {
     question: 'LINKS is spijtig genoeg niet de juiste weg, Weeral niet, probeer nog een keer, ik heb hier weer twee pakjes klaargezet, KIES VERSTANDIG en WIN JE GROTE PRIJS!',
     bg: './public/img/Gameshow/glitchingGameshow.png',
@@ -106,12 +148,7 @@ const options = {
     sound: './public/sound/buzzer.mp3'
   },
 
-  option10: {
-    question: 'Wat? Waarom wil je het taartje niet eten? storten. Het podium begint in te storten en het wordt zwart voor je ogen',
-    bg: './public/img/imgPage2.png',
-    nextLeft: 'option14',
-    nextRight: 'option15',
-  },
+ 
   option12: {
     question: 'Je wordt wakker in een steegje, je voelt je gedesoriënteerd en verward. Je realiseert je al snel dat er iets vreselijks is gebeurd en dat je je niet kunt herinneren wat er is gebeurd nadat je het taartje hebt gegeten. Je begint te huilen en voelt je vreselijk kwetsbaar en bang. Je realiseert je dat je hulp nodig hebt en begint op zoek te gaan naar iemand die je kan helpen. Kies een deur om hulp te zoeken, kies verstandig!',
     bg: './public/img/Crossroads/pad.png',
@@ -190,12 +227,6 @@ const options = {
     sound: './public/sound/crickets.mp3'
   },
 
-  option11: {
-    question: 'Wat? Waarom wil je het taartje niet eten? ik heb er zelfs nog zo veel tijd in gestoken! podium begint te schudden, gebouw begint in te storten.  en lichten beginnen te flikkeren. Waarom eet nooit iemand van mijn taartjes! Waarom! Nog eens een luide knal en het wordt plots zwart voor je ogen',
-    bg: './public/img/imgPage2.png',
-    nextLeft: 'option14',
-    nextRight: 'option15',
-  },
   optionStop:{
     question: 'Kies links of recht (stop)',
     bg: './public/img/imgPage3.png',
@@ -300,14 +331,15 @@ function wsConnect() {
           var sound = new Audio();
           sound.src = options[currentOption].sound;
           sound.play();
-      
-        } else if(currentTime > time + 300000) {
+        }  else if(currentTime > time + 300000) {
 
         }
         time = currentTime;
       }  
     }  
-
+    else if(msg.data === 'reset') {
+      location.reload()
+      }
   };
 
   ws.onopen = function () {
