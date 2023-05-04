@@ -125,8 +125,7 @@ function wsConnect() {
     if (currentTime > time + 10000) {
       console.log(currentTime);
       console.log("ready");
-      if(options[currentOption] && options[currentOption].nextLeft){
-
+      if (options[currentOption] && options[currentOption].nextLeft) {
         if (msg.data === 'left') {
           currentOption = options[currentOption].nextLeft;
           background.style.backgroundImage = `url(${options[currentOption].bg})`;
@@ -137,8 +136,8 @@ function wsConnect() {
             if (i >= options[currentOption].question.length) {
               clearInterval(intervalId);
             }
-          }, 1000);        
-        } else if(msg.data === 'right'){
+          }, 1000);
+        } else if (msg.data === 'right') {
           currentOption = options[currentOption].nextRight;
           background.style.backgroundImage = `url(${options[currentOption].bg})`;
           let i = 0;
@@ -148,15 +147,15 @@ function wsConnect() {
             if (i >= options[currentOption].question.length) {
               clearInterval(intervalId);
             }
-          }, 1000);        
-        } else if(currentTime > time + 300000) {
-
+          }, 1000);
+        } else if (currentTime > time + 300000) {
+          // Do something after 5 minutes (300000 milliseconds)
         }
         time = currentTime;
-      }  
-    }  
-
+      }
+    }
   };
+  
 
   ws.onopen = function () {
     console.log('Connected');
