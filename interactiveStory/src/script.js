@@ -311,6 +311,7 @@ function wsConnect() {
           var sound = new Audio();
           sound.src = options[currentOption].sound;
           sound.play();
+          localStorage.setItem("selectedoption", currentOption);
       
 
          
