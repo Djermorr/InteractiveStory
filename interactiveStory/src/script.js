@@ -50,7 +50,7 @@ const options = {
   },
   option2: {
     question: 'Hoera, je hebt een banaan gewonnen! In de andere kamer viel wel een vele betere prijs te winnen, ik ga je nog een kans geven om iets coolers te winnen, kies de juiste deur en win een betere prijs!',
-    bg: './public/img/Gameshow/Gameshow.png',
+    bg: './public/img/Gameshow/gameshow_presents_bannanaGood.png',
     nextLeft: 'option4',
     nextRight: 'option4',
     sound: './public/sound/klap.mp3'
@@ -64,8 +64,8 @@ const options = {
     sound: './public/sound/klap.mp3'
   },
   option4: {
-    question: 'Jammer maar helaas, geen prijs voor jouw! Je bent zelfs je banaan kwijt. Ik ga je toch nog een kans geven om te winnen! Kies een deur en win een prijs!',
-    bg: './public/img/Gameshow/Gameshow.png',
+    question: 'Jammer maar helaas, geen prijs voor jouw! Je mag je banaantje wel bijhouden maar, ik ga je toch nog een kans geven om te winnen! Kies een deur en maak kans om een betere prijs te winnen!',
+    bg: './public/img/Gameshow/gameshow_presents_bannanaGood_2.png',
     nextLeft: 'option8',
     nextRight: 'option9',
     sound: './public/sound/fail.mp3'
@@ -133,15 +133,15 @@ const options = {
     
   },
   option8: {
-    question: 'LINKS is spijtig genoeg niet de juiste weg, Weeral niet, probeer nog een keer, ik heb hier weer twee pakjes klaargezet, KIES VERSTANDIG en WIN JE GROTE PRIJS!',
-    bg: './public/img/Gameshow/glitchingGameshow.png',
+    question: "Dit is spijtig genoeg niet de juiste weg, Weeral niet, probeer nog een keer, ik heb hier weer twee pakjes klaargezet, KIES VERSTANDIG en WIN JE GROTE PRIJS!",
+    bg: './public/img/Gameshow/gameshow_presents_glitched_fout.png',
     nextLeft: 'option14',
     nextRight: 'option14',
     sound: './public/sound/buzzer.mp3'
   },
 
   option9: {
-    question: 'Oeeeh, je blijft maar verliezen seg, RECHTS is spijtig genoeg niet de juist weg, ik heb hier weer twee pakjes klaargezet, KIES VERSTANDIG en WIN EEN GROTE PRIJS!',
+    question: 'Oeeeh, je blijft maar verliezen seg, dit is spijtig genoeg niet de juist weg, ik heb hier weer twee pakjes klaargezet, KIES VERSTANDIG en WIN EEN GROTE PRIJS!',
     bg: './public/img/Gameshow/glitchingGameshow.png',
     nextLeft: 'option14',
     nextRight: 'option14',
@@ -199,21 +199,21 @@ const options = {
   
   option14:{
     question: 'Ik weet niet hoe ik dit moet zeggen maar. Je bent weeral verkeerd... Probeer misschien nog eens?',
-    bg: './public/img/Gameshow/glitchingGameshow.png',
+    bg: './public/img/Gameshow/gameshow_presents_bannanaBAD.png',
     nextLeft: 'option15',
     nextRight: 'option15',
     sound: './public/sound/bwabwa.mp3'
   },
   option15:{
-    question: 'Wat is er aan het gebeuren, er wordt hier maar geen prijs gewonnen, PROBEER NOG EENS',
-    bg: './public/img/Gameshow/glitchingGameshow.png',
+    question: 'Wat is er aan het gebeuren, er wordt hier maar geen prijs gewonnen. Ik begin mezelf af te vragen of er ooit wel een prijs was? Misschien moet jij dat ook eens doen, probeer nog maar eens voor de zekerheid. Kies een deur',
+    bg: './public/img/Gameshow/gameshow_presents_bannanaBAD.png',
     nextLeft: 'option16',
     nextRight: 'option16',
     sound: './public/sound/bwabwa.mp3'
   },
   option16:{
-    question: 'WAT, WEERAL NIET GEWONNEN, er was misschien nooit geen prijs, ik geef het alvast op, jij kunt doen wat je wil, kies een deur of niet, het interesseert mij niet meer, doei!',
-    bg: './public/img/Gameshow/glitchingGameshow.png',
+    question: 'Weeral niet gewonnen! Ik geef het alvast op, jij kunt doen wat je wil, kies een deur of niet, ik ben naar huis, het interesseert mij niet meer, doei!',
+    bg: './public/img/Gameshow/gameshow_presents_glitched_fout_presentatorweg.png',
     nextLeft: 'option17',
     nextRight: 'option17',
     sound: './public/sound/bwabwa.mp3'
@@ -291,7 +291,7 @@ function wsConnect() {
     //console.log(msg.data);
     currentTime = Date.now();
     //console.log(currentTime);
-    if (currentTime > time + 10000) {
+    if (currentTime > time + 100) {
       console.log(currentTime);
       console.log("ready");
       if(options[currentOption] && options[currentOption].nextLeft){
@@ -332,15 +332,8 @@ function wsConnect() {
           var sound = new Audio();
           sound.src = options[currentOption].sound;
           sound.play();
-<<<<<<< HEAD
-        } else if(msg.data === 'reset') {
-          location.reload()
-        } else if(currentTime > time + 300000) {
-          
-=======
         }  else if(currentTime > time + 300000) {
 
->>>>>>> 0b34912a176f4d94acd0bcce9452621444ba6056
         }
         time = currentTime;
       }  
