@@ -270,7 +270,7 @@ function wsConnect() {
     //console.log(msg.data);
     currentTime = Date.now();
     //console.log(currentTime);
-    if (currentTime > time + 100) {
+    if (currentTime > time + 1000) {
       console.log(currentTime);
       console.log("ready");
       if(options[currentOption] && options[currentOption].nextLeft){
@@ -290,7 +290,9 @@ function wsConnect() {
           var sound = new Audio();
           sound.src = options[currentOption].sound;
           sound.play();
-          localStorage.setItem("selectedoption", currentOption);
+          const currentSummary = JSON.parse(localStorage.getItem( `summary`));
+          console.log(currentSummary)
+          localStorage.setItem( `summary`, JSON.stringify([...currentSummary, currentOption]));
       
 
          
