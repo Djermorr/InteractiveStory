@@ -302,7 +302,7 @@ function wsConnect() {
           var sound = new Audio();
           sound.src = options[currentOption].sound;
           sound.play();
-          const currentSummary = JSON.stringify(localStorage.getItem( `summary`));
+          const currentSummary = JSON.parse(localStorage.getItem( `summary`));
           console.log(currentSummary)
           localStorage.setItem( `summary`, JSON.stringify([...currentSummary, currentOption]));
 
@@ -314,8 +314,8 @@ function wsConnect() {
         time = currentTime;
       } else if(currentOption === optionSummary){
         content.textContent = options[currentOption].question;
-        const currentSummary = JSON.parse(localStorage.getItem(`summary`));
-        pageSummary.innerHTML = `<ul>${currentSummary.map(item => `<li>${item}</li>`).join('')}</ul>`;
+        const currentSummary = JSON.stringify(localStorage.getItem(`summary`));
+        console.log(currentSummary.summary);
         setTimeout(() => {
           message.text = options[currentOption].question;
           speechSynthesis.speak(message);
