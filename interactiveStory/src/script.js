@@ -332,8 +332,15 @@ function wsConnect() {
           var sound = new Audio();
           sound.src = options[currentOption].sound;
           sound.play();
+<<<<<<< HEAD
+        } else if(msg.data === 'reset') {
+          location.reload()
+        } else if(currentTime > time + 300000) {
+          
+=======
         }  else if(currentTime > time + 300000) {
 
+>>>>>>> 0b34912a176f4d94acd0bcce9452621444ba6056
         }
         time = currentTime;
       }  
