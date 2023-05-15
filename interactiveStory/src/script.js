@@ -43,10 +43,11 @@ message.rate = 1.5;
 let currentOption = 'option1';
 const options = {
   option1: {
-    question: '',
+    question: 'Bedankt om een nieuw game te starten, welk cadeautje kies je nu?',
     nextLeft: 'option2',
     nextRight: 'option3',
- 
+    bg: './public/img/Gameshow/gameshow_presents_OG.png',
+    sound: './public/sound/gameshow.mp3'
   },
   option2: {
     question: 'Hoera, je hebt een banaan gewonnen! In de andere kamer viel wel een vele betere prijs te winnen, ik ga je nog een kans geven om iets coolers te winnen, kies de juiste deur en win een betere prijs!',
@@ -57,8 +58,8 @@ const options = {
 
   },
   option3: {
-    question: 'PROFICIAT, u heeft een overheerlijk TAARTJE gewonnen! In de andere kamer viel wel een vele betere prijs te winnen, wil je het overheerlijke taartje op eten? "JA:LINKS NEE: RECHTS',
-    bg: './public/img/Gameshow/Gameshow.png',
+    question: 'Proficiat! u heeft een overheerlijk TAARTJE gewonnen! In de andere kamer viel wel een vele betere prijs te winnen, wil je het overheerlijke taartje op eten? JA:LINKS NEE: RECHTS',
+    bg: './public/img/Gameshow/gameshow_presents_cake.png',
     nextLeft: 'option6',
     nextRight: 'option7',
     sound: './public/sound/klap.mp3'
@@ -85,51 +86,53 @@ const options = {
   },
   option7: {
     question: 'Wat? Waarom wil je het taartje niet eten? ik heb er zelfs nog zo veel tijd in gestoken! Waarom eet nooit iemand van mijn taartjes! Je hoort nog eens een luide knal en het wordt plots zwart voor je ogen. Kies een deur om door te gaan',
-    bg: './public/img/Gameshow/overgrownGameshow.png',
+    bg: './public/img/Presentator_ENG.png',
     nextLeft: 'option23',
     nextRight: 'option23',
     sound: './public/sound/rumbling.mp3'
   },
   option23: {
-    question: 'Je ontwaakt in een gesloopte zaal, het podium is volledig kapot gemaakt. Rondom u liggen mensen onder het puin. Niemand weet wat er gebeurt is. Je ziet uit je linker ooghoek nog de presentator zijn kleedkamer betreden. Voor je staan twee deuren, je kunt kiezen om de set te verlaten, en naar buiten te gaan (links) OF  de presentator te confronteren (rechts)',
-    bg: './public/img/Gameshow/overgrownGameshow.png',
+    question: 'Welkom op de echte gameshow, hier gaan we u testen door een scenario te geven. Kies verstandig, de volgende keuze van deur legt je pad vast ',
+    bg: './public/img/Gameshow/gameshowMasterDarkPath.png',
     nextLeft: 'option24',
     nextRight: 'option25',
-    sound: './public/sound/debris.mp3'
+    sound: './public/sound/gameshowBAD.mp3'
   },
   option24: {
-    question: 'Je staat recht en beweegt naar de uitgang, onderweg valt er nog een hoop puin naast je naar beneden op iemand naast je zijn been. Help! krijst de man uit, ik krijg de steen niet van mijn benen. Het gebouw begint steeds minder stevig te worden en je beseft dat er geen tijd is voor deze man te helpen. Help je hem? JA = LINKS NEE = RECHTS',
-    bg: './public/img/Gameshow/overgrownGameshow.png',
+    question: 'Je komt in een neerstortend gebouw terecht, onderweg valt er nog een hoop puin naast je naar beneden op iemand naast je zijn been. Help! krijst de man uit, ik krijg de steen niet van mijn benen. Het gebouw begint steeds minder stevig te worden en je beseft dat er geen tijd is voor deze man te helpen. Help je hem? JA = LINKS NEE = RECHTS',
+    bg: './public/img/crumblinghall.jpg',
     nextLeft: 'option26',
     nextRight: 'option27',
     sound: './public/sound/rumbling.mp3'
   },
   option25: {
-    question: 'Achter deze deur staat de presentator, Je kan nog altijd door de linkse deur te pakken gaan lopen of ga je echt de confrontatie aan? LINKS: Lopen RECHTS: confronteren',
-    bg: './public/img/Gameshow/overgrownGameshow.png',
+    question:'Raadsel: Wat was het ander cadeautje had je niet voor het taartje gekozen in het begin van de show? LINKS: een banaan, RECHTS: een appel ',
+    bg: './public/img/Gameshow/supersayanPresentator.jpg',
     nextLeft: 'option27',
     nextRight: 'option28',
-    sound: './public/sound/rumbling.mp3'
+    sound: './public/sound/mysterious.mp3'
   },
 
   option26: {
     question: 'Je heft de grote blok steen van de man zijn benen en helpt hem recht. Het been van de man ziet er helemaal niet goed uit. Je probeert hem op te pakken en vertrekt naar de uitgang. Onderweg naar de uitgang duw je hem nog uit de weg voor een andere blok, maar je bezwijkt zelf onder het puin en je blaast je laatste adem uit',
-    bg: './public/img/Gameshow/overgrownGameshow.png',
-    nextLeft: 'option22',
-    nextRight: 'option23',
-    
+    bg: './public/img/crumblinghall.jpg',
+    sound: './public/sound/rumbling.mp3',
+    nextLeft: 'option1',
+    nextRight: 'option1',
   },
   option27: {
-    question: 'Je verlaat het gebouw, als je naar buiten gaat kijk je nog eens snel over je schouder naar achter, je kan alleen maar denken dat dit allemaal u schuld is, had je maar dat taartje gegeten... Je ziet de man ook nog onder het puin zijn laatste adem uitblazen terwijl hij in u ogen kijkt.',
-    bg: './public/img/Gameshow/overgrownGameshow.png',
-    nextLeft: 'option22',
-    nextRight: 'option23',
+    question: 'Proficiat, u heeft juist geantwoord, u krijgt de opportuniteit om verder te leven + u krijgt de banaan van ons!',
+    bg: './public/img/Gameshow/supersayanPresentator.png',
+    nextLeft: 'option1',
+    nextRight: 'option1',
+    
   },
   option28: {
-    question: 'Achter de deur staat de presentor die niet twijfelt om je neer te steken, hij schuimbekt en heeft nog etensrestjes van het taartje rond zijn mond hangen, had dit ook gebeurt had jij het taartje gegeten. Je blaast je laatste adem uit.',
-    bg: './public/img/Gameshow/overgrownGameshow.png',
-    nextLeft: 'option22',
-    nextRight: 'option23',
+    question: 'Dat is fout, het was een banaan, u heeft verloren, de kamer wordt steeds warmer en warmer tot je levend verbrand! ',
+    bg: './public/img/Presentator_ENG.png',
+    sound: './public/sound/fail2.mp3',
+    nextLeft: 'option1',
+    nextRight: 'option1',
     
   },
   option8: {
@@ -137,12 +140,12 @@ const options = {
     bg: './public/img/Gameshow/gameshow_presents_glitched_fout.png',
     nextLeft: 'option14',
     nextRight: 'option14',
-    sound: './public/sound/buzzer.mp3'
+    sound: './public/sound/fail2.mp3'
   },
 
   option9: {
     question: 'Oeeeh, je blijft maar verliezen seg, dit is spijtig genoeg niet de juist weg, ik heb hier weer twee pakjes klaargezet, KIES VERSTANDIG en WIN EEN GROTE PRIJS!',
-    bg: './public/img/Gameshow/glitchingGameshow.png',
+    bg: './public/img/Gameshow/gameshow_presents_glitched_fout.png',
     nextLeft: 'option14',
     nextRight: 'option14',
     sound: './public/sound/buzzer.mp3'
@@ -173,7 +176,7 @@ const options = {
   },
 
   option20: {
-    question: 'Terwijl je aan het weglopen bent begint de wereld te vervormen, felle kleuren komen van overal en de gebouwen beginnen vreemde vormen aan te nemen. Je begint je aangenamer te voelen en je krijgt een warm gevoel over je heen',
+    question: 'Terwijl je aan het weglopen bent begint de wereld te vervormen. Je hart begint hevig te bonken. Felle kleuren komen van overal en de gebouwen beginnen vreemde vormen aan te nemen. Je begint je aangenamer te voelen en je krijgt een warm gevoel over je heen',
     bg: './public/img/HallucinationAlley.png',
     nextLeft: 'option21',
     nextRight: 'option21',
@@ -189,10 +192,18 @@ const options = {
   },
 
   option22: {
-    question: 'LINKS of RECHTS',
+    question: 'links....... Of ....... Rechts........',
     bg: './public/img/EmptyRoom.png',
-    nextLeft: 'option22',
-    nextRight: 'option22',
+    nextLeft: 'option30',
+    nextRight: 'option30',
+    
+  },
+
+  option30: {
+    question: 'Had je maar nooit dat taartje gegeten...',
+    bg: './public/img/EmptyRoom.png',
+    nextLeft: 'option1',
+    nextRight: 'option1',
     
   },
 
@@ -222,8 +233,8 @@ const options = {
   option17:{
     question: '',
     bg: './public/img/Gameshow/overgrownGameshow.png',
-    nextLeft: 'option17',
-    nextRight: 'option17',
+    nextLeft: 'option1',
+    nextRight: 'option1',
     sound: './public/sound/crickets.mp3'
   },
 
