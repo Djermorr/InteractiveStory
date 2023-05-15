@@ -1,8 +1,7 @@
 const optionButtons = document.querySelectorAll('#option-buttons button');
 const content = document.querySelector('#content');
+const pageSummary = document.querySelector('#pageSummary');
 const resetButton = document.querySelector('#reset-button');
-const buttonLeft = document.querySelector('#buttonLeft');
-const buttonRight = document.querySelector('#buttonRight')
 let background = document.querySelector('body')
 
 var currentTime = Date.now();
@@ -10,21 +9,15 @@ var time = currentTime;
 const message = new SpeechSynthesisUtterance();
 
 
-/*
-Banaan = B
-Taart = T
-Eten = E
-
- */
-
-
 var gameshow = new Audio();
 var sound = new Audio();
-gameshow.src = './public/sound/gameshow.mp3';
+gameshow.src = './sound/gameshow.mp3';
 sound.src = '';
 gameshow.play();
 
   window.addEventListener('load', () => {
+    localStorage.clear();
+    localStorage.setItem( `summary`, JSON.stringify([]));
     setTimeout(function() {
     message.text = 'Beste mensen, welkom op onze gameshow! Zie je deze cadeautjes beste speler? één van deze is voor u! Kies je het linkse cadeautje of het rechtse?';
     speechSynthesis.speak(message);
@@ -34,10 +27,10 @@ gameshow.play();
   
   });
   var voices = window.speechSynthesis.getVoices();
-message.pitch = 2;
+message.pitch = 2.5;
 message.volume = 2;
 message.lang = "nl-BE";
-message.rate = 1.5;
+message.rate = 1.2;
 
   
 let currentOption = 'option1';
@@ -46,40 +39,41 @@ const options = {
     question: '',
     nextLeft: 'option2',
     nextRight: 'option3',
- 
   },
   option2: {
     question: 'Hoera, je hebt een banaan gewonnen! In de andere kamer viel wel een vele betere prijs te winnen, ik ga je nog een kans geven om iets coolers te winnen, kies de juiste deur en win een betere prijs!',
-    bg: './public/img/Gameshow/Gameshow.png',
+    bg: './img/Gameshow/Gameshow.png',
     nextLeft: 'option4',
     nextRight: 'option4',
-    sound: './public/sound/klap.mp3'
-
+    sound: './sound/klap.mp3',
+    summary: 'banaan'
   },
   option3: {
     question: 'PROFICIAT, u heeft een overheerlijk TAARTJE gewonnen! In de andere kamer viel wel een vele betere prijs te winnen, wil je het overheerlijke taartje op eten? "JA:LINKS NEE: RECHTS',
-    bg: './public/img/Gameshow/Gameshow.png',
+    bg: './img/Gameshow/Gameshow.png',
     nextLeft: 'option6',
     nextRight: 'option7',
-    sound: './public/sound/klap.mp3'
+    sound: './public/sound/klap.mp3',
+    summary: 'taartje'
   },
   option4: {
     question: 'Jammer maar helaas, geen prijs voor jouw! Je bent zelfs je banaan kwijt. Ik ga je toch nog een kans geven om te winnen! Kies een deur en win een prijs!',
-    bg: './public/img/Gameshow/Gameshow.png',
+    bg: './img/Gameshow/Gameshow.png',
     nextLeft: 'option8',
     nextRight: 'option9',
-    sound: './public/sound/fail.mp3'
+    sound: './public/sound/fail.mp3',
+    summary: 'verliezen'
   },
   option5: {
     question: 'Kies links of recht (5)',
     bg: './public/img/imgPage4.png',
-    nextLeft: 'optionStop',
-    nextRight: 'optionStop',
+    nextLeft: 'optionSummary',
+    nextRight: 'optionSummary',
   },
   option6: {
     question: 'Het was een lekker taartje maar, je begint je onwel te voelen, heb je dan nooit niet geleerd om eten van een vreemde op te eten? Je valt in slaap... Ga door een deur om voort te gaan',
     bg: './public/img/Gameshow/gameshow_drugs.jpg',
-    nextLeft: 'option12',
+    nextLeft: 'optionSummary',
     nextRight: 'option12',
     sound: './public/sound/snacking.mp3'
   },
@@ -137,7 +131,8 @@ const options = {
     bg: './public/img/Gameshow/glitchingGameshow.png',
     nextLeft: 'option14',
     nextRight: 'option14',
-    sound: './public/sound/buzzer.mp3'
+    sound: './public/sound/buzzer.mp3',
+    summary: 'verliezen'
   },
 
   option9: {
@@ -145,7 +140,8 @@ const options = {
     bg: './public/img/Gameshow/glitchingGameshow.png',
     nextLeft: 'option14',
     nextRight: 'option14',
-    sound: './public/sound/buzzer.mp3'
+    sound: './public/sound/buzzer.mp3',
+    summary: 'verliezen'
   },
 
  
@@ -202,7 +198,8 @@ const options = {
     bg: './public/img/Gameshow/glitchingGameshow.png',
     nextLeft: 'option15',
     nextRight: 'option15',
-    sound: './public/sound/bwabwa.mp3'
+    sound: './public/sound/bwabwa.mp3',
+    summary: 'verliezen'
   },
   option15:{
     question: 'Wat is er aan het gebeuren, er wordt hier maar geen prijs gewonnen, PROBEER NOG EENS',
@@ -222,50 +219,21 @@ const options = {
   option17:{
     question: '',
     bg: './public/img/Gameshow/overgrownGameshow.png',
-    nextLeft: 'option17',
-    nextRight: 'option17',
+    nextLeft: 'optionSummary',
+    nextRight: 'optionSummary',
     sound: './public/sound/crickets.mp3'
   },
 
-  optionStop:{
-    question: 'Kies links of recht (stop)',
+  optionSummary:{
+    question: 'Bedankt om ons je tijd te geven om mee te doen met onze installatie, Hier hebben we nog een overzicht van de keuzes die jij gemaakt hebt',
     bg: './public/img/imgPage3.png',
   }
 };
 
-
-
-/*const selectedOption = localStorage.getItem('selectedOption');
-
-if (selectedOption) {
-  // If the user has already selected an option, highlight the appropriate button
-  optionButtons.forEach(button => {
-    if (button.value === selectedOption) {
-      button.classList.add('selected');
-      content.textContent = options[selectedOption];
-    }
-  });
-}
-
-optionButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    // Deselect all buttons and select the clicked one
-    optionButtons.forEach(button => button.classList.remove('selected'));
-    button.classList.add('selected');
-
-    // Save the selected option to local storage
-    localStorage.setItem(`${'selectedOption'} ${button.value}`, button.value);
-
-    // Update the content with the selected option
-    content.textContent = options[button.value];
-
-  });
-});*/
-
-
 resetButton.addEventListener('click', () => {
   // Remove all local storage items
   localStorage.clear();
+  localStorage.setItem( `summary`, JSON.stringify([]));
 
   // Deselect all buttons
   optionButtons.forEach(button => button.classList.remove('selected'));
@@ -291,7 +259,7 @@ function wsConnect() {
     //console.log(msg.data);
     currentTime = Date.now();
     //console.log(currentTime);
-    if (currentTime > time + 10000) {
+    if (currentTime > time + 1000) {
       console.log(currentTime);
       console.log("ready");
       if(options[currentOption] && options[currentOption].nextLeft){
@@ -307,10 +275,13 @@ function wsConnect() {
           message.pitch = 2;
           message.volume = 2;
           message.lang = "nl-BE";
-          message.rate = 1.5;
+          message.rate = 1;
           var sound = new Audio();
           sound.src = options[currentOption].sound;
           sound.play();
+          const currentSummary = JSON.parse(localStorage.getItem( `summary`));
+          console.log(currentSummary)
+          localStorage.setItem( `summary`, JSON.stringify([...currentSummary, currentOption]));
       
 
          
@@ -327,22 +298,36 @@ function wsConnect() {
           message.pitch = 2;
           message.volume = 2;
           message.lang = "nl-BE";
-          message.rate = 1.5;
+          message.rate = 1;
           var sound = new Audio();
           sound.src = options[currentOption].sound;
           sound.play();
-<<<<<<< HEAD
+          const currentSummary = JSON.stringify(localStorage.getItem( `summary`));
+          console.log(currentSummary)
+          localStorage.setItem( `summary`, JSON.stringify([...currentSummary, currentOption]));
+
         } else if(msg.data === 'reset') {
           location.reload()
         } else if(currentTime > time + 300000) {
-          
-=======
-        }  else if(currentTime > time + 300000) {
 
->>>>>>> 0b34912a176f4d94acd0bcce9452621444ba6056
         }
         time = currentTime;
-      }  
+      } else if(currentOption === optionSummary){
+        content.textContent = options[currentOption].question;
+        const currentSummary = JSON.parse(localStorage.getItem(`summary`));
+        pageSummary.innerHTML = `<ul>${currentSummary.map(item => `<li>${item}</li>`).join('')}</ul>`;
+        setTimeout(() => {
+          message.text = options[currentOption].question;
+          speechSynthesis.speak(message);
+        }, 5000);
+        message.pitch = 2;
+        message.volume = 2;
+        message.lang = "nl-BE";
+        message.rate = 1;
+        var sound = new Audio();
+        sound.src = options[currentOption].sound;
+        sound.play();
+    }
     }  
     else if(msg.data === 'reset') {
       location.reload()
