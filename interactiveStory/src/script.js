@@ -338,8 +338,8 @@ function wsConnect() {
         time = currentTime;
       } else if (currentOption === optionSummary) {
         content.textContent = options[currentOption].question;
-        const currentSummary = JSON.stringify(localStorage.getItem(`summary`));
-        console.log(currentSummary.summary);
+        const currentSummary = JSON.parse(localStorage.getItem(`summary`));
+        pageSummary.textContent = currentSummary.summary;
         setTimeout(() => {
           message.text = options[currentOption].question;
           speechSynthesis.speak(message);
