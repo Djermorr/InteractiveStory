@@ -115,7 +115,7 @@ const options = {
 
   option26: {
     question:
-      "Je heft de grote blok steen van de man zijn benen en helpt hem recht. Het been van de man ziet er helemaal niet goed uit. Je probeert hem op te pakken en vertrekt naar de uitgang. Onderweg naar de uitgang duw je hem nog uit de weg voor een andere blok, maar je bezwijkt zelf onder het puin en je blaast je laatste adem uit. ga door een deur om opnieuw te beginnen",
+      "Je heft de grote blok steen van de man zijn benen en helpt hem recht. Het been van de man ziet er helemaal niet goed uit. Je probeert hem op te pakken en vertrekt naar de uitgang. Onderweg naar de uitgang duw je hem nog uit de weg voor een andere blok, maar je bezwijkt zelf onder het puin en je blaast je laatste adem uit. (The selfless ending) (ga door een deur om opnieuw te beginnen)",
     bg: "./public/img/crumblinghall.jpg",
     sound: "./public/sound/rumbling.mp3",
     nextLeft: "option1",
@@ -123,7 +123,7 @@ const options = {
   },
   option31: {
     question:
-      "Het gebouw stort in, je hebt gekozen om de man niet te helpen en loopt naar buiten, je hebt het gehaald! Maar je voelt je heel schuldig, je had misschien de man nog kunnen redden, ga door een deur om opnieuw te beginnen",
+      "Het gebouw stort in, je hebt gekozen om de man niet te helpen en loopt naar buiten, je hebt het gehaald! Maar je voelt je heel schuldig, je had misschien de man nog kunnen redden, (The selfish ending) (ga door een deur om opnieuw te beginnen)",
     bg: "./public/img/crumblinghall.jpg",
     sound: "./public/sound/rumbling.mp3",
     nextLeft: "option1",
@@ -131,14 +131,14 @@ const options = {
   },
   option27: {
     question:
-      "Proficiat, u heeft juist geantwoord, u krijgt de opportuniteit om verder te leven + u krijgt de banaan van ons! ga door een deur om opnieuw te beginnen",
+      "Proficiat, u heeft juist geantwoord, u krijgt de opportuniteit om verder te leven + u krijgt de banaan van ons! (the banana ending) (ga door een deur om opnieuw te beginnen)",
     bg: "./public/img/presentatorQuestion.png",
     nextLeft: "option1",
     nextRight: "option1",
   },
   option28: {
     question:
-      "Dat is fout, het was een banaan, u heeft verloren, de kamer wordt steeds warmer en warmer tot je levend verbrand! ga door een deur om opnieuw te beginnen",
+      "Dat is fout, het was een banaan, u heeft verloren, de kamer wordt steeds warmer en warmer tot je levend verbrand! (the apply water to the burned area ending) (ga door een deur om opnieuw te beginnen)",
     bg: "./public/img/Presentator_ENG.png",
     sound: "./public/sound/fail2.mp3",
     nextLeft: "option1",
@@ -155,10 +155,10 @@ const options = {
 
   option9: {
     question:
-      "Oeeeh, je blijft maar verliezen seg, dit is spijtig genoeg niet de juist weg, ik heb hier weer twee pakjes klaargezet, KIES VERSTANDIG en WIN EEN GROTE PRIJS!",
-    bg: "./public/img/Gameshow/gameshow_presents_glitched_fout.png",
-    nextLeft: "option14",
-    nextRight: "option14",
+      "Je beslist de banaan te houden. plots denk je aan een boeket bloemen en voor je het beseft verschijnt dit boeket voor je neus. De banaan is duidelijk magisch en brengt dingen tevoorschijn. Je kan hiermee mensen helpen (Links) of de krachten voor jezelf houden (Rechts)",
+    bg: "./public/img/Gameshow/gameshow_presents_magicbanana1.png",
+    nextLeft: "option32",
+    nextRight: "option33",
     sound: "./public/sound/buzzer.mp3",
     summary: "verliezen",
   },
@@ -215,8 +215,76 @@ const options = {
 
   option30: {
     question:
-      "Had je maar nooit dat taartje gegeten... Je blijft rondlopen in de eindeloze loep der deuren, hier eindigt je verhaal, ga door een deur om opnieuw te beginnen",
+      "Had je maar nooit dat taartje gegeten... Je blijft rondlopen in de eindeloze loep der deuren, hier eindigt je verhaal, (the scoobydoo ending) (ga door een deur om opnieuw te beginnen)",
     bg: "./public/img/EmptyRoom.png",
+    nextLeft: "option1",
+    nextRight: "option1",
+  },
+  
+  option32: {
+    question:
+      "Je besluit mensen te helpen en voor je het weet is er voor iedereen dat je ziet een duidelijke positieve invloed. Maar je ontdekt op het nieuws dat alles wat jij tevoorschijn laat komen van een andere plaats op de wereld komt, blijf je verder doen (Links) of stop je (Rechts)?",
+    bg: "./public/img/Prosperity.png",
+    nextLeft: "option34",
+    nextRight: "option35",
+  },
+
+    option33: {
+    question:
+      "Hoe kan je zo egoistisch zijn? Denk je nu echt alleen aan jezelf? Ik haal het gebouw hier neer! Ga tegen de verteller in (Links) of laat je dit gebeuren (Rechts)",
+    bg: "./public/img/Gameshow/gameshow_presents_magicbanana_bad.png",
+    nextLeft: "option36",
+    nextRight: "option24",
+  },
+
+  option34: {
+    question:
+      "Je beslist de krachten te blijven gebruiken (met al die hoge prijzen in de supermarkten ook), in jouw omgeving breekt er een nieuwe gulden tijdperk uit maar niet zonder gevolgen, mensen over de rest van de wereld geraken verhongerd, steden verwoest, chaos breekt overal uit en plots (kies een deur om verder te gaan)",
+    bg: "./public/img/barrenEarth.png",
+    nextLeft: "option38",
+    nextRight: "option38",
+  },
+  option35: {
+    question:
+      "Je stopt net op tijd met de krachten van de banaan te gebruiken. De wereld geraakt terug rustig op gang en je ontdekt dat de schade beperkt is tot de USA, Florida om precies te zijn. Een jonge vrouw wiens leven je erg geholpen hebt in de korte tijd komt naar je toe en wil haar leven met je delen. Beslis je mee te gaan met haar (Links) of niet (Rechts)?",
+    bg: "./public/img/Prosperity_wife.png",
+    nextLeft: "option39",
+    nextRight: "option40",
+  },
+
+      option36: {
+    question:
+      "Wat denk je wel tegen mij in gaan? Hier zal je niet goed afkomen! Je zal het je geraden hebben! (ga door een deur om het verhaal verder te zetten)",
+    bg: "./public/img/Gameshow/gameshow_presents_magicbanana_bad.png",
+    nextLeft: "option37",
+    nextRight: "option37",
+  },
+
+        option37: {
+    question:
+      "Alles is plots zwart. Alleen ben je nog, niemand om je heen... niemand.... ... niemand (the lonely ending II: Electric Boogaloo) (ga door een deur om het spel opnieuw te beginnen)",
+    bg: "./public/img/Space.png",
+    nextLeft: "option1",
+    nextRight: "option1",
+  },
+    option38: {
+    question:
+      "Plots is alles voorbij, niet alles kon blijven lopen zoals het was, de wereld gaat naar de verdoemenis, oorlogen breken uit, nucleaire wapens worden ingezet, miserie... overal miserie... (the world war ending) (ga door een deur om het spel opnieuw te beginnen)",
+    bg: "./public/img/ruinedEarth.png",
+    nextLeft: "option1",
+    nextRight: "option1",
+  },
+  option39: {
+    question:
+      "Je leeft nog lang en gelukkig met je nieuwe partner. Maar wat met de banaan? deze heb je met je partner gedeeld in de vorm van een betoverende banana split (The only good Ending) (ga door een deur om het spel opnieuw te beginnen)",
+    bg: "./public/img/BananaSplit.png",
+    nextLeft: "option1",
+    nextRight: "option1",
+  },
+    option40: {
+    question:
+      "Je blijft voor altijd alleen, door de mooie vrouw af te wijzen heeft er niemand meer interesse in je getoont en voel je veel eenzaamheid. Je beslist dan ook je leven te leiden als een heremiet in het woud. Hier sterf je alleen en eenzaam (The lonely ending) (ga door een deur om het spel opnieuw te beginnen)",
+    bg: "./public/img/Shack.png",
     nextLeft: "option1",
     nextRight: "option1",
   },
@@ -249,7 +317,7 @@ const options = {
 
   option17: {
     question:
-      "Het spel is gedaan, je bent de ultieme loser, ga door een deur voor opnieuw te spelen",
+      "Het spel is gedaan, je bent de ultieme loser, (the ultimate loser *you* ending) (ga door een deur voor opnieuw te spelen)",
     bg: "./public/img/Gameshow/overgrownGameshow.png",
     nextLeft: "option1",
     nextRight: "option1",
