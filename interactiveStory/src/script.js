@@ -155,7 +155,7 @@ const options = {
 
   option9: {
     question:
-      "Je beslist de banaan te houden. plots denk je aan een boeket bloemen en voor je het beseft verschijnt dit boeket voor je neus. De banaan is duidelijk magisch en brengt dingen tevoorschijn. Je kan hiermee mensen helpen (Links) of de krachten voor jezelf houden (Rechts)",
+      "Je beslist de banaan te houden nadat je geen andere prijs ziet achter de deur. plots denk je aan een boeket bloemen en voor je het beseft verschijnt dit boeket voor je neus. De banaan is duidelijk magisch en brengt dingen tevoorschijn. Je kan hiermee mensen helpen (Links) of de krachten voor jezelf houden (Rechts)",
     bg: "./public/img/Gameshow/gameshow_presents_magicbanana1.png",
     nextLeft: "option32",
     nextRight: "option33",
