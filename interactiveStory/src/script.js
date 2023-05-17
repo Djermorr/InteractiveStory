@@ -159,7 +159,7 @@ const options = {
     bg: "./public/img/Gameshow/gameshow_presents_magicbanana1.png",
     nextLeft: "option32",
     nextRight: "option33",
-    sound: "./public/sound/buzzer.mp3",
+    sound: "./public/sound/drum.mp3",
     summary: "verliezen",
   },
 
@@ -235,6 +235,7 @@ const options = {
     bg: "./public/img/Gameshow/gameshow_presents_magicbanana_bad.png",
     nextLeft: "option36",
     nextRight: "option24",
+    sound: "./public/sound/mysterious.mp3",
   },
 
   option34: {
@@ -243,6 +244,7 @@ const options = {
     bg: "./public/img/barrenEarth.png",
     nextLeft: "option38",
     nextRight: "option38",
+    sound: "./public/sound/ambientBB.mp3",
   },
   option35: {
     question:
@@ -250,6 +252,8 @@ const options = {
     bg: "./public/img/Prosperity_wife.png",
     nextLeft: "option39",
     nextRight: "option40",
+    sound: "./public/sound/ambientBB.mp3",
+
   },
 
       option36: {
@@ -258,6 +262,7 @@ const options = {
     bg: "./public/img/Gameshow/gameshow_presents_magicbanana_bad.png",
     nextLeft: "option37",
     nextRight: "option37",
+    sound: "./public/sound/mysterieus.mp3",
   },
 
         option37: {
@@ -266,6 +271,7 @@ const options = {
     bg: "./public/img/Space.png",
     nextLeft: "option1",
     nextRight: "option1",
+    sound: "./public/sound/mysterious.mp3",
   },
     option38: {
     question:
@@ -273,6 +279,7 @@ const options = {
     bg: "./public/img/ruinedEarth.png",
     nextLeft: "option1",
     nextRight: "option1",
+    sound: "./public/sound/rumbling.mp3",
   },
   option39: {
     question:
@@ -280,6 +287,8 @@ const options = {
     bg: "./public/img/BananaSplit.png",
     nextLeft: "option1",
     nextRight: "option1",
+    sound: "./public/sound/WIN.mp3",
+
   },
     option40: {
     question:
@@ -287,6 +296,7 @@ const options = {
     bg: "./public/img/Shack.png",
     nextLeft: "option1",
     nextRight: "option1",
+    sound: "./public/sound/ambientBB.mp3",
   },
 
   option14: {
