@@ -4,9 +4,9 @@ beste mensen, welkom op onze gameshow! Deze README bevat instructables voor onze
 
 ## Youtube video TDDD
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=1qvc44pfOPI
 " target="_blank"><img src="http://img.youtube.com/vi/1qvc44pfOPI/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="940" height="580" border="100" /></a>
+alt="IMAGE ALT TEXT HERE" width="940" height="580" border="10" /></a>
 
 ## Componenten
 
