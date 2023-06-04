@@ -6,7 +6,7 @@ beste mensen, welkom op onze gameshow! Deze README bevat instructables voor onze
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE
 " target="_blank"><img src="http://img.youtube.com/vi/1qvc44pfOPI/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+alt="IMAGE ALT TEXT HERE" width="940" height="580" border="100" /></a>
 
 ## Componenten
 
@@ -45,9 +45,10 @@ Op de eerste foto ziet u een schets van **het vooraanzicht** van onze opstelling
 
 Op de tweede foto ziet u onze tafelschikking staan. Deze opstelling moet nog eens gedaan worden langs de andere kant, **9 tafels** zijn nodig per kant
 
-**TIP!** Hang tussen de middelste 4 tafels doeken zodat mensen de installatie niet kunnen zien!
+![foto klem](./img/tafels.jpg)
+![foto klem](./img/tafels2.jpg)
 
--Foto van deuren opstelling\*
+**TIP!** Hang tussen de middelste 4 tafels doeken zodat mensen de installatie niet kunnen zien!
 
 ### Stap 2
 
@@ -59,7 +60,9 @@ Zoals u op de schets ziet hebben we gebruik gemaakt van twee ultrasonars. Eén u
 
 #### Verbinden van ultrasonars naar Raspberry Pi
 
-Zoals u ziet op de onderste afbeelding is er nog een broodbord met een arduino verbonden tussen de ultrasonar en onze Raspberry Pi, deze arduino moet dan via usb kabel verbonden worden naar de raspberry pi.
+Zoals u kunt zien op onderste afbeelding is er nog een broodbord met een arduino verbonden tussen de ultrasonar en onze Raspberry Pi, deze arduino moet dan via usb kabel verbonden worden naar de raspberry pi.
+
+![foto klem](./img/tekening.jpg)
 
 ### Stap 4
 
@@ -131,7 +134,7 @@ Node-RED biedt een **WebSocket-invoer- en uitvoerknooppunt** waarmee je gegevens
 
 We gaan dus de data van onze ultrasonar naar een WebSocket sturen die deze data naar onze **Javascript file**
 kan transporteren.
-
+![foto klem](./img/node-red-af.png)
 **Maar eerst moeten we de data nog omzetten!**
 
 #### Data omzetten naar String
@@ -139,6 +142,8 @@ kan transporteren.
 Met de data die we nu krijgen (afstand in cm) zijn we niets voor onze installatie, we moeten alleen weten of er verandering is in die afstand om zo te weten of er iemand langs de sensor passeerd of niet.
 
 Hiervoor hebben we een **kleine functie** geschreven in node-red om zo de data om te zetten naar een String **"left" of "right"**, zo weten we door welke deur juist iemand gelopen is.
+
+![foto klem](./img/codenode-red.png)
 
 #### Uitleg Functie
 
@@ -237,5 +242,4 @@ We hebben niet veel HTML & CSS code omdat we bijna alles gecodeerd hebben in jav
 #### Creatief denken + Gebruik van makerspace
 
 Wij hebben voor onze installatie voldoende gebruik gemaakt van de makerspace, zo hebben we met **een 3d printer** klemmetjes laten maken die rond de poten van de tafels pasten. Tussen deze twee klemmen staken we dan een plank waar onze ultrasonar in gezet werd. Onze plank hebben we ook laten uitsnijden met een lasercutter in de makerspace
-![foto klem](./docs/img/klem.jpg)
-![foto klem](./docs/img/codenode-red.png)
+![foto klem](./img/klem.jpg)
