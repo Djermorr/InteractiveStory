@@ -6,7 +6,7 @@ beste mensen, welkom op onze gameshow! Deze README bevat instructables voor onze
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE
 " target="_blank"><img src="http://img.youtube.com/vi/1qvc44pfOPI/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180"  /></a>
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 ## Componenten
 
@@ -182,7 +182,6 @@ option1: {
     bg: "./public/img/Gameshow/gameshow_presents_OG.png",
     sound: "./public/sound/gameshow.mp3",
   },
-};
 ```
 
 Dit is ons **startscherm,** Als we nu links door de deur gaat zal die naar _option2_ gaan, als we door de rechtse gaan naar _option3_ zo veranderd ons spel altijd van **achtergrond (bg)** en speelt er ook altijd **een sound** bij het wandelen door de deur!
@@ -198,7 +197,7 @@ if (options[currentOption] && options[currentOption].nextLeft) {
         if (msg.data === "left") {
           currentOption = options[currentOption].nextLeft;
           background.style.backgroundImage = `url(${options[currentOption].bg})`;
-          content.textContent = options[currentOption].question;
+          content.textContent = options[currentOption].question;}
 ```
 
 **Als de data "left" is** (dus iemand loopt door de linkse deur) gaat de _currentOption_ veranderen naar de _nextLeft_ van die _currentOption_. Hetzelfde gebeurt ook bij de rechtse kant, deze gaat dan de data van _nextRight_ nemen. Heel simpele functie om een pagina te veranderen zonder van **HTML pagina** te switchen.
@@ -232,3 +231,11 @@ Dit waren de voornamelijkste stukjes code van onze game. Als u al de code wilt b
 #### HTML & CSS
 
 We hebben niet veel HTML & CSS code omdat we bijna alles gecodeerd hebben in javascript. U kunt altijd onze CSS code bekijken door op deze [link te klikken!](https://github.com/Djermorr/InteractiveStory/blob/main/interactiveStory/src/styles/styles.css)
+
+## Tips & Tricks!
+
+#### Creatief denken + Gebruik van makerspace
+
+Wij hebben voor onze installatie voldoende gebruik gemaakt van de makerspace, zo hebben we met **een 3d printer** klemmetjes laten maken die rond de poten van de tafels pasten. Tussen deze twee klemmen staken we dan een plank waar onze ultrasonar in gezet werd. Onze plank hebben we ook laten uitsnijden met een lasercutter in de makerspace
+![foto klem](./docs/img/klem.jpg)
+![foto klem](./docs/img/codenode-red.png)
