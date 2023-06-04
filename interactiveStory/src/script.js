@@ -19,7 +19,7 @@ window.addEventListener("load", () => {
   localStorage.setItem(`summary`, JSON.stringify([]));
   setTimeout(function () {
     message.text =
-      "Beste mensen, welkom op onze gameshow! Zie je deze cadeautjes beste speler? één van deze is voor u! Kies je het linkse cadeautje of het rechtse?";
+      "Beste mensen, welkom op onze gameshow! Zie je deze cadeautjes beste speler? één van deze is voor u! 1 persoon kan maar door 1 deur, de rest mag aan één kant blijven wachten, ga ook vlotjes en snel door de deur(ga door linkse deur voor linkse pakje en rechtse deur voor rechtse pakje)";
     speechSynthesis.speak(message);
   }, 5000); // delay in milliseconds (2000 milliseconds = 2 seconds)
 });
@@ -33,7 +33,7 @@ let currentOption = "option1";
 const options = {
   option1: {
     question:
-      "Beste mensen, welkom op onze gameshow! Zie je deze cadeautjes beste speler? 1 persoon kan maar door 1 deur, de rest mag aan één kant blijven wachten, ga ook vlotjes en snel door de deur(ga door linkse deur voor linkse pakje en rechtse deur voor rechtse pakje)",
+      "Beste mensen, welkom op onze gameshow! Zie je deze cadeautjes beste speler? één van deze is voor u! 1 persoon kan maar door 1 deur, de rest mag aan één kant blijven wachten, ga ook vlotjes en snel door de deur(ga door linkse deur voor linkse pakje en rechtse deur voor rechtse pakje)",
     nextLeft: "option2",
     nextRight: "option3",
     bg: "./public/img/Gameshow/gameshow_presents_OG.png",
@@ -220,7 +220,7 @@ const options = {
     nextLeft: "option1",
     nextRight: "option1",
   },
-  
+
   option32: {
     question:
       "Je besluit mensen te helpen en voor je het weet is er voor iedereen dat je ziet een duidelijke positieve invloed. Maar je ontdekt op het nieuws dat alles wat jij tevoorschijn laat komen van een andere plaats op de wereld komt, blijf je verder doen (Links) of stop je (Rechts)?",
@@ -229,9 +229,9 @@ const options = {
     nextRight: "option35",
   },
 
-    option33: {
+  option33: {
     question:
-      "Hoe kan je zo egoistisch zijn? Denk je nu echt alleen aan jezelf? Ik haal het gebouw hier neer! Ga tegen de verteller in (Links) of laat je dit gebeuren (Rechts)",
+      "Hoe kan je zo egoistisch zijn? Denk je nu echt alleen aan jezelf? Ik haal het gebouw hier neer! Ga tegen de verteller in (Rechts) of laat je dit gebeuren (Links)",
     bg: "./public/img/Gameshow/gameshow_presents_magicbanana_bad.png",
     nextLeft: "option36",
     nextRight: "option24",
@@ -253,10 +253,9 @@ const options = {
     nextLeft: "option39",
     nextRight: "option40",
     sound: "./public/sound/ambientBB.mp3",
-
   },
 
-      option36: {
+  option36: {
     question:
       "Wat denk je wel tegen mij in gaan? Hier zal je niet goed afkomen! Je zal het je geraden hebben! (ga door een deur om het verhaal verder te zetten)",
     bg: "./public/img/Gameshow/gameshow_presents_magicbanana_bad.png",
@@ -265,7 +264,7 @@ const options = {
     sound: "./public/sound/mysterieus.mp3",
   },
 
-        option37: {
+  option37: {
     question:
       "Alles is plots zwart. Alleen ben je nog, niemand om je heen... niemand.... ... niemand (the lonely ending II: Electric Boogaloo) (ga door een deur om het spel opnieuw te beginnen)",
     bg: "./public/img/Space.png",
@@ -273,7 +272,7 @@ const options = {
     nextRight: "option1",
     sound: "./public/sound/mysterious.mp3",
   },
-    option38: {
+  option38: {
     question:
       "Plots is alles voorbij, niet alles kon blijven lopen zoals het was, de wereld gaat naar de verdoemenis, oorlogen breken uit, nucleaire wapens worden ingezet, miserie... overal miserie... (the world war ending) (ga door een deur om het spel opnieuw te beginnen)",
     bg: "./public/img/ruinedEarth.png",
@@ -288,9 +287,8 @@ const options = {
     nextLeft: "option1",
     nextRight: "option1",
     sound: "./public/sound/WIN.mp3",
-
   },
-    option40: {
+  option40: {
     question:
       "Je blijft voor altijd alleen, door de mooie vrouw af te wijzen heeft er niemand meer interesse in je getoont en voel je veel eenzaamheid. Je beslist dan ook je leven te leiden als een heremiet in het woud. Hier sterf je alleen en eenzaam (The lonely ending) (ga door een deur om het spel opnieuw te beginnen)",
     bg: "./public/img/Shack.png",
@@ -327,7 +325,7 @@ const options = {
 
   option17: {
     question:
-      "Het spel is gedaan, je bent de ultieme loser, (the ultimate loser *you* ending) (ga door een deur voor opnieuw te spelen)",
+      "Het spel is gedaan, je bent de ultieme loser, (the ultimate loser you ending) (ga door een deur voor opnieuw te spelen)",
     bg: "./public/img/Gameshow/overgrownGameshow.png",
     nextLeft: "option1",
     nextRight: "option1",
@@ -357,7 +355,6 @@ const options = {
 // This needs to point to the web socket in the Node-RED flow
 // ... in this case it's /simple
 var wsUri = "ws://" + "192.168.100.1:1880" + "/ws";
-
 window.onload = () => {
   wsConnect();
 };
@@ -365,7 +362,6 @@ window.onload = () => {
 function wsConnect() {
   console.log("connect", wsUri);
   var ws = new WebSocket(wsUri);
-
   ws.onmessage = function (msg) {
     //console.log(msg.data);
     currentTime = Date.now();
