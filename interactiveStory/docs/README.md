@@ -44,9 +44,9 @@ Voor onze installatie hebben wij tafels gebruikt om zo onze twee deuren te maken
 Op de eerste foto ziet u een schets van **het vooraanzicht** van onze opstelling
 
 Op de tweede foto ziet u onze tafelschikking staan. Deze opstelling moet nog eens gedaan worden langs de andere kant, **9 tafels** zijn nodig per kant
-
-![foto klem](./img/tafels.jpg)
-![foto klem](./img/tafels2.jpg)
+Omdat wij een groter lokaal hadden, hebben wij gekozen om **12 tafels** te gebruiken, 3 extra in het midden (omdat onze deuren te breed gingen zijn.).
+![foto tafels](./img/tafels.jpg)
+![foto tafels2](./img/tafels2.jpg)
 
 **TIP!** Hang tussen de middelste 4 tafels doeken zodat mensen de installatie niet kunnen zien!
 
@@ -62,7 +62,7 @@ Zoals u op de schets ziet hebben we gebruik gemaakt van twee ultrasonars. Eén u
 
 Zoals u kunt zien op onderste afbeelding is er nog een broodbord met een arduino verbonden tussen de ultrasonar en onze Raspberry Pi, deze arduino moet dan via usb kabel verbonden worden naar de raspberry pi.
 
-![foto klem](./img/tekening.jpg)
+![foto tekeningVerbinding](./img/tekening.jpg)
 
 ### Stap 4
 
@@ -134,7 +134,7 @@ Node-RED biedt een **WebSocket-invoer- en uitvoerknooppunt** waarmee je gegevens
 
 We gaan dus de data van onze ultrasonar naar een WebSocket sturen die deze data naar onze **Javascript file**
 kan transporteren.
-![foto klem](./img/node-red-af.png)
+![node-red](./img/node-red-af.png)
 **Maar eerst moeten we de data nog omzetten!**
 
 #### Data omzetten naar String
@@ -143,7 +143,7 @@ Met de data die we nu krijgen (afstand in cm) zijn we niets voor onze installati
 
 Hiervoor hebben we een **kleine functie** geschreven in node-red om zo de data om te zetten naar een String **"left" of "right"**, zo weten we door welke deur juist iemand gelopen is.
 
-![foto klem](./img/codenode-red.png)
+![Functie nod-red](./img/codenode-red.png)
 
 #### Uitleg Functie
 
