@@ -43,7 +43,8 @@ Voor onze installatie hebben wij tafels gebruikt om zo onze twee deuren te maken
 
 Op de eerste foto ziet u een schets van **het vooraanzicht** van onze opstelling
 
-Op de tweede foto ziet u onze tafelschikking staan. Deze opstelling moet nog eens gedaan worden langs de andere kant, **9 tafels** zijn nodig per kant
+Op de tweede foto ziet u onze tafelschikking staan. Deze opstelling moet nog eens gedaan worden langs de andere kant, **9 tafels** zijn nodig per kant.
+
 Omdat wij een groter lokaal hadden, hebben wij gekozen om **12 tafels** te gebruiken, 3 extra in het midden (omdat onze deuren anders te breed gingen zijn).
 ![foto tafels](./img/tafels.jpg)
 ![foto tafels2](./img/tafels2.jpg)
